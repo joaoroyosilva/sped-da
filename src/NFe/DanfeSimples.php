@@ -203,7 +203,7 @@ class DanfeSimples extends DaCommon
             if (!isset($this->nfeArray['NFe']['infNFe']['@attributes']['Id'])) {
                 throw new \Exception('XML não parece ser uma NF-e!');
             }
-            if ($this->nfeArray['protNFe']['infProt']['cStat'] != '100') {
+            if (!in_array($this->nfeArray['protNFe']['infProt']['cStat'], ['100', '120', '150'])) {
                 throw new \Exception('NF-e não autorizada!');
             }
         }

@@ -91,7 +91,8 @@ trait TraitBlocoV
             91 => 'Pagamento Posterior',
             99 => 'Outros',
         ];
-        return mb_strtoupper($lista[$type]);
+        $key = (int) $type;
+        return mb_strtoupper($lista[$key] ?? 'Outros');
     }
 
     protected function calculateHeightPag()
